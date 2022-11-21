@@ -1,3 +1,8 @@
+#dil{
+  font-size: 1.64rem;;
+  margin-bottom: 30;
+  margin-top: 25;
+}
 .profile-pic {
   position: relative;
   max-width:130px;
@@ -30,7 +35,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 .social {
-  margin: 0 auto;
+  margin-bottom: 20;
   width: auto;
   text-align: inherit;
   /* padding: 10px; */
@@ -93,6 +98,7 @@
   display: inline-block;
   border-radius: 5px;
   -webkit-border-radius: 5px;
+  margin-top: 15;
 }
 
 /* .readme:hover{
@@ -101,6 +107,7 @@
 } */
 
 .contactme {
+  margin-top: 15;
   position: relative;
   padding: 11px 35px;
   background: none;
@@ -250,7 +257,7 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
 
 #hashtag{
   font-weight: 95%;
-  font-size: large;
+  font-size: 1.64rem;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   margin: 0.82rem 0 0.656rem 0;
 }
