@@ -585,6 +585,11 @@ small {
   }
 }
 
+hr{
+  box-sizing: content-box;
+  height: 0;
+  margin-top: 40;
+}
 @media (max-width: 1360px) {
   .card ul li {
     font-size: 14px;
