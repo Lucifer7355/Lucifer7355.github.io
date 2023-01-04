@@ -585,7 +585,12 @@ small {
   }
 }
 
+section#contact {
+  height: 75vh;
+}
+
 hr{
+
   box-sizing: content-box;
   height: 0;
   margin-top: 40;
