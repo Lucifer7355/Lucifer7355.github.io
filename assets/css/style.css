@@ -21,6 +21,7 @@
 }
 
 .profile-pic {
+  
   border: 3px solid #009688; /* or use teal/dark theme accent */
   transition: transform 0.3s ease;
 }
@@ -28,8 +29,10 @@
   transform: scale(1.05);
 }
 
-img.responsive-img, video.responsive-video {
-    max-width: 500%;
+
+img.responsive-img, video.responsive-video
+ {
+    max-width: 500;
     height: auto;
 }
 
