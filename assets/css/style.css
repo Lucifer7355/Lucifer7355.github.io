@@ -20,6 +20,14 @@
   border-radius: 50% !important;
 }
 
+.profile-pic {
+  border: 3px solid #009688; /* or use teal/dark theme accent */
+  transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
 .profile-pic img {
   width: 100%;
   height: auto;
