@@ -29,6 +29,15 @@
   transform: scale(1.05);
 }
 
+.tech-icon {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 img.responsive-img, video.responsive-video
  {
