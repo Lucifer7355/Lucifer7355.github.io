@@ -28,6 +28,11 @@
   transform: scale(1.05);
 }
 
+img.responsive-img, video.responsive-video {
+    max-width: 500%;
+    height: auto;
+}
+
 .profile-pic img {
   width: 100%;
   height: auto;
