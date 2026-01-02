@@ -28,3 +28,11 @@ python -m http.server 5000 --bind 0.0.0.0
 
 ## Deployment
 This is a static site deployment. The entire root directory (`.`) is served as the public directory.
+
+## Recent Changes (2025)
+- Added comprehensive responsive CSS for all sections (projects, experience, education, about, contact)
+- Fixed typos: explaination→explanation, serparately→separately, SprinBoot→SpringBoot, fronted→frontend, resposnse→response, @@ankitviddya→@ankitviddya
+- Added smooth scrolling behavior
+- Added professional footer with copyright
+- Added hover effects for cards and buttons
+- Cleaned up commented-out code
