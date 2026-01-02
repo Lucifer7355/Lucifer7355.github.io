@@ -860,3 +860,160 @@ img {
     width: 33.33% !important;
   }
 }
+
+/* Responsive Project Cards */
+#projects .card.medium {
+  height: auto;
+  min-height: 400px;
+}
+
+#projects .card.medium .card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+#projects .card.medium .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#projects .card.medium .card-content {
+  height: auto;
+  min-height: 150px;
+  padding: 20px;
+}
+
+#projects .card.medium .card-content .card-title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+#projects .card.medium .card-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+#projects .card-reveal {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#projects .card-reveal .card-title {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+#projects .card-reveal ul {
+  padding-left: 0;
+}
+
+#projects .card-reveal ul li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  margin-left: 20px;
+}
+
+/* Tablet - Project Cards */
+@media (min-width: 601px) and (max-width: 992px) {
+  #projects .col.s12.m6.l4 {
+    width: 50% !important;
+  }
+  
+  #projects .card.medium {
+    min-height: 380px;
+  }
+  
+  #projects .card.medium .card-image {
+    height: 180px;
+  }
+  
+  #projects .card.medium .card-content .card-title {
+    font-size: 1.1rem;
+  }
+  
+  #projects .card.medium .card-content p {
+    font-size: 0.9rem;
+  }
+  
+  #projects .card-reveal ul li {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile - Project Cards */
+@media (max-width: 600px) {
+  #projects .col.s12.m6.l4 {
+    width: 100% !important;
+  }
+  
+  #projects .card.medium {
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+  
+  #projects .card.medium .card-image {
+    height: 180px;
+  }
+  
+  #projects .card.medium .card-content {
+    min-height: auto;
+    padding: 15px;
+  }
+  
+  #projects .card.medium .card-content .card-title {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  #projects .card.medium .card-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  #projects .card-reveal {
+    padding: 15px;
+  }
+  
+  #projects .card-reveal .card-title {
+    font-size: 0.95rem;
+  }
+  
+  #projects .card-reveal ul li {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-left: 15px;
+  }
+  
+  #projects .card-reveal .card-action {
+    padding: 10px 0;
+  }
+  
+  #projects .card-reveal .card-action .btn-floating.btn-large {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+  
+  #projects .card-reveal .card-action .btn-floating.btn-large i {
+    font-size: 1.2rem;
+    line-height: 45px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  #projects .card.medium .card-content .card-title {
+    font-size: 0.9rem;
+  }
+  
+  #projects .card.medium .card-content p {
+    font-size: 0.8rem;
+  }
+  
+  #projects .card-reveal ul li {
+    font-size: 0.75rem;
+  }
+}
