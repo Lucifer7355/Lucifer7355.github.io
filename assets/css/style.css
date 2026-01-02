@@ -1017,3 +1017,123 @@ img {
     font-size: 0.75rem;
   }
 }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Footer styles */
+footer.page-footer {
+  padding: 0;
+  margin-top: 0;
+}
+
+footer.page-footer .container {
+  margin: 0 auto;
+}
+
+/* Professional hover effects for cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Improve button hover transitions */
+.btn-floating {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-floating:hover {
+  transform: scale(1.1);
+}
+
+/* Better link transitions */
+a {
+  transition: color 0.2s ease;
+}
+
+/* Contact section improvements */
+#contact .container p {
+  margin-bottom: 15px;
+}
+
+#contact .container a.hoverline {
+  margin-left: 15px;
+}
+
+/* Experience card responsive fixes */
+@media (max-width: 600px) {
+  #experience .card .row.valign-wrapper {
+    display: block;
+  }
+  
+  #experience .card .col.s12.m2 {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  #experience .card .col.s12.m10 {
+    width: 100%;
+  }
+  
+  #experience .card-content {
+    padding: 15px;
+  }
+  
+  #experience .card-title {
+    font-size: 1.2rem !important;
+  }
+  
+  #experience .card ul li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  
+  #experience .card-action span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Education section responsive */
+@media (max-width: 600px) {
+  #education .card {
+    margin-bottom: 20px;
+  }
+  
+  #education .card-content {
+    padding: 15px;
+  }
+  
+  #education .card-title {
+    font-size: 1.1rem !important;
+  }
+  
+  #education .card ul li {
+    font-size: 0.85rem;
+  }
+}
+
+/* About section responsive */
+@media (max-width: 600px) {
+  #about .container {
+    padding: 0 15px;
+  }
+  
+  #about .container p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  #about blockquote h5 {
+    font-size: 1rem;
+  }
+  
+  #about .card-panel ul li {
+    font-size: 0.9rem;
+  }
+}
