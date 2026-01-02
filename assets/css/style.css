@@ -588,6 +588,10 @@ a.hoverline:hover {
   height: 240px;
 }
 
+.card-action span {
+  color: #0284C7;
+}
+
 .card-action a.btn-floating {
   margin-bottom: 0;
 }
@@ -817,5 +821,42 @@ hr{
   ul.side-nav.fixed li.logo {
     min-height: 170px;
     padding: 10px 10px 20px;
+  }
+  
+  /* Fix for overlapping intro content on small screens */
+  #intro.section {
+    height: auto !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0;
+  }
+  #intro.section .container {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    padding: 0 20px;
+  }
+  #intro.section h1 {
+    font-size: 2.5rem;
+  }
+  #intro.section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ensure images don't overflow containers */
+img {
+  max-width: 100%;
+}
+
+/* Improved tablet layout */
+@media (min-width: 601px) and (max-width: 992px) {
+  .col.m6 {
+    width: 100% !important;
+  }
+  #skills .col.m2 {
+    width: 33.33% !important;
   }
 }
