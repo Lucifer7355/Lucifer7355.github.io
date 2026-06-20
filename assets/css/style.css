@@ -1137,3 +1137,60 @@ a {
     font-size: 0.9rem;
   }
 }
+
+.stats-row {
+  margin: 1.5rem 0 2rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.stat-label {
+  margin: 0.35rem 0 0;
+  color: #616161;
+  font-size: 0.9rem;
+}
+
+.projects-intro {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.featured-project .card-image {
+  position: relative;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: #0EA5E9;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
