@@ -304,7 +304,7 @@
           </div>
           <div class="col s6 m3">
             <div class="stat-card z-depth-1">
-              <h4 class="teal-text stat-number">19+</h4>
+              <h4 class="teal-text stat-number">20+</h4>
               <p class="stat-label">Projects Built</p>
             </div>
           </div>
@@ -495,7 +495,7 @@
       <h3 class="page-title white-text teal center-align">Projects</h3>
       <div class="container">
         <p class="center-align projects-intro grey-text text-darken-2">
-          Flagship work in data engineering, backend systems, and enterprise AI — explore featured projects and 19+ builds below.
+          Flagship work in data engineering, backend systems, and enterprise AI — explore featured projects below.
         </p>
         <div class="row">
           
@@ -563,6 +563,42 @@
                 </ul>
                 <div class="card-action">
                   <a aria-label="Visit the GitHub repo for Enterprise RAG Intelligence Platform" href="https://github.com/Lucifer7355/enterprise-rag-intelligence-platform"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PII Masking API -->
+          <div class="col s12 m6 l4">
+            <div class="card medium featured-project">
+              <div class="card-image waves-effect waves-block waves-light">
+                <span class="featured-badge">Featured</span>
+                <img alt="PII Masking API" src="/assets/img/golang.png.png" loading="lazy" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">PII Masking API (Go)<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  Stateless Go microservice to mask PAN, Aadhaar, phone, email, and GSTIN before logs or downstream systems see raw data.
+                </p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text"><small>Accomplishments</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> Go, net/http, Docker, regex validation.</li>
+                  <li>Built a lightweight HTTP API for masking Indian PII fields used in fintech/KYC flows.</li>
+                  <li>Supports single mask, bulk mask, validate-only, and auto-detect endpoints.</li>
+                  <li>Format validation runs before masking — invalid input returns 400, not partial leaks.</li>
+                  <li>Covers PAN, Aadhaar, mobile, email, and GSTIN with consistent masked output formats.</li>
+                  <li>Stateless design with no database dependency — easy to run behind a gateway or in sidecar mode.</li>
+                  <li>Shipped with unit tests, Dockerfile, and API docs for quick integration.</li>
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit the GitHub repo for PII Masking API" href="https://github.com/Lucifer7355/Masking_PII"
                     target="_blank" data-position="top" data-tooltip="View Source"
                     class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
                       class="fa fa-github"></i></a>
