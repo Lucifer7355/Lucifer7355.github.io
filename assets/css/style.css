@@ -873,16 +873,17 @@ img {
   background: #0f172a;
 }
 
-#projects .card.medium .card-image img.activator {
+#projects .card.medium .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
   transition: transform 0.35s ease;
 }
 
-#projects .card.medium:hover .card-image img.activator {
-  transform: scale(1.05);
+#projects .card.medium:hover .card-image img {
+  transform: scale(1.03);
 }
 
 #projects .card.medium .card-content {
