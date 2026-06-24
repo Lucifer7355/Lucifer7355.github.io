@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="270" y="110" width="150" height="200" rx="8" fill="#fff" opacity="0.95" transform="rotate(-8 345 210)"/>
+  <rect x="350" y="130" width="150" height="200" rx="8" fill="#fff" opacity="0.85"/>
+  <rect x="430" y="110" width="150" height="200" rx="8" fill="#fff" opacity="0.75" transform="rotate(8 505 210)"/>
+  <text x="425" y="200" text-anchor="middle" fill="#dc2626" font-family="Segoe UI,Arial,sans-serif" font-size="42" font-weight="800">PDF</text>
+  <text x="425" y="240" text-anchor="middle" fill="#64748b" font-family="Segoe UI,Arial,sans-serif" font-size="14">merge · split · encrypt</text>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">PDF Toolbox API</text>
+  <text x="400" y="435" text-anchor="middle" fill="#ffedd5" font-family="Segoe UI,Arial,sans-serif" font-size="17">Go Microservice · Cloudflare R2</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="320" cy="220" r="50" fill="#fff" opacity="0.9"/>
+  <rect x="295" y="200" width="50" height="60" rx="25" fill="#0369a1"/>
+  <circle cx="320" cy="195" r="18" fill="#fff" opacity="0.9"/>
+  <path d="M400 180 L520 180 L520 260 L400 260 Z" fill="#fff" opacity="0.2" rx="8"/>
+  <text x="460" y="215" text-anchor="middle" fill="#fff" font-size="14">fever, headache</text>
+  <text x="460" y="240" text-anchor="middle" fill="#a7f3d0" font-size="13">’ Dr. Sharma</text>
+  <path d="M370 220 L400 220" stroke="#fff" stroke-width="3" marker-end="url(#a)"/>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">Doctor Suggestion API</text>
+  <text x="400" y="435" text-anchor="middle" fill="#d1fae5" font-family="Segoe UI,Arial,sans-serif" font-size="17">SpringBoot · REST · Swagger</text>
+</svg>

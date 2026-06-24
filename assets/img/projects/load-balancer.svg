@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="300" cy="220" r="45" fill="#38bdf8" stroke="#fff" stroke-width="3"/>
+  <circle cx="400" cy="220" r="45" fill="#22d3ee" stroke="#fff" stroke-width="3"/>
+  <circle cx="500" cy="220" r="45" fill="#2dd4bf" stroke="#fff" stroke-width="3"/>
+  <text x="300" y="228" text-anchor="middle" fill="#0f172a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">S1</text>
+  <text x="400" y="228" text-anchor="middle" fill="#0f172a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">S2</text>
+  <text x="500" y="228" text-anchor="middle" fill="#0f172a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700">S3</text>
+  <path d="M345 220 H355 M445 220 H455" stroke="#fff" stroke-width="4"/>
+  <text x="400" y="310" text-anchor="middle" fill="#e0f2fe" font-family="Segoe UI,Arial,sans-serif" font-size="15">Weighted Round Robin</text>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">Load Balancer Simulation</text>
+  <text x="400" y="435" text-anchor="middle" fill="#cffafe" font-family="Segoe UI,Arial,sans-serif" font-size="17">3 Microservices · SpringBoot</text>
+</svg>

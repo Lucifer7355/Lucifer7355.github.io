@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="250" y="120" width="200" height="160" rx="12" fill="#fff" opacity="0.15" stroke="#bae6fd" stroke-width="3"/>
+  <circle cx="310" cy="175" r="25" fill="#fde68a"/>
+  <polygon points="250,280 310,210 370,250 420,200 450,280" fill="#34d399" opacity="0.9"/>
+  <rect x="480" y="150" width="220" height="100" rx="12" fill="#0f172a" opacity="0.55"/>
+  <text x="590" y="195" text-anchor="middle" fill="#e0f2fe" font-family="Segoe UI,Arial,sans-serif" font-size="16">"A dog on the beach"</text>
+  <path d="M450 200 L480 200" stroke="#fff" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">Image Captioning</text>
+  <text x="400" y="435" text-anchor="middle" fill="#cffafe" font-family="Segoe UI,Arial,sans-serif" font-size="17">CNN + NLP · Deep Learning</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="400" cy="200" r="70" fill="none" stroke="#e0f2fe" stroke-width="3" opacity="0.9"/>
+  <circle cx="280" cy="260" r="40" fill="#7c3aed" opacity="0.8"/>
+  <circle cx="520" cy="260" r="40" fill="#0ea5e9" opacity="0.8"/>
+  <circle cx="400" cy="320" r="35" fill="#22d3ee" opacity="0.7"/>
+  <line x1="400" y1="200" x2="280" y2="260" stroke="#bae6fd" stroke-width="2"/>
+  <line x1="400" y1="200" x2="520" y2="260" stroke="#bae6fd" stroke-width="2"/>
+  <line x1="280" y1="260" x2="400" y2="320" stroke="#bae6fd" stroke-width="2"/>
+  <line x1="520" y1="260" x2="400" y2="320" stroke="#bae6fd" stroke-width="2"/>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">Enterprise RAG Platform</text>
+  <text x="400" y="435" text-anchor="middle" fill="#e0f2fe" font-family="Segoe UI,Arial,sans-serif" font-size="17">Hybrid Retrieval · Knowledge Graph · RBAC</text>
+</svg>

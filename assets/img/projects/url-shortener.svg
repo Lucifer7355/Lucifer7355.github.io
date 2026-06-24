@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="260" y="160" width="280" height="70" rx="35" fill="#fff" opacity="0.2"/>
+  <text x="400" y="210" text-anchor="middle" fill="#fff" font-family="monospace" font-size="22">https://very-long-url.com/abc</text>
+  <path d="M400 240 L400 280" stroke="#fff" stroke-width="3"/>
+  <polygon points="400,290 385,270 415,270" fill="#fff"/>
+  <rect x="310" y="300" width="180" height="50" rx="25" fill="#fff"/>
+  <text x="400" y="333" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="20" font-weight="700">bit.ly/x9k2</text>
+  <text x="400" y="420" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">URL Shortener</text>
+  <text x="400" y="455" text-anchor="middle" fill="#fce7f3" font-family="Segoe UI,Arial,sans-serif" font-size="17">Node.js · Express · MySQL</text>
+</svg>

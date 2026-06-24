@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="280" y="130" width="240" height="240" rx="8" fill="#1e293b" stroke="#94a3b8" stroke-width="3"/>
+  <line x1="340" y1="130" x2="340" y2="370" stroke="#475569" stroke-width="2"/>
+  <line x1="400" y1="130" x2="400" y2="370" stroke="#475569" stroke-width="2"/>
+  <line x1="460" y1="130" x2="460" y2="370" stroke="#475569" stroke-width="2"/>
+  <line x1="280" y1="190" x2="520" y2="190" stroke="#475569" stroke-width="2"/>
+  <line x1="280" y1="250" x2="520" y2="250" stroke="#475569" stroke-width="2"/>
+  <line x1="280" y1="310" x2="520" y2="310" stroke="#475569" stroke-width="2"/>
+  <text x="310" y="225" fill="#22d3ee" font-family="monospace" font-size="36" font-weight="700">5</text>
+  <text x="370" y="285" fill="#f472b6" font-family="monospace" font-size="36" font-weight="700">3</text>
+  <text x="430" y="345" fill="#a3e635" font-family="monospace" font-size="36" font-weight="700">7</text>
+  <text x="400" y="420" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">Sudoku Solver</text>
+  <text x="400" y="455" text-anchor="middle" fill="#cbd5e1" font-family="Segoe UI,Arial,sans-serif" font-size="17">Backtracking · Vanilla JS</text>
+</svg>

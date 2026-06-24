@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="220" y="160" width="360" height="140" rx="10" fill="#1e1b4b"/>
+  <rect x="235" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="275" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="315" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="355" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="395" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="435" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="475" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="515" y="170" width="28" height="120" fill="#fff"/>
+  <rect x="255" y="170" width="18" height="75" fill="#111"/>
+  <rect x="295" y="170" width="18" height="75" fill="#111"/>
+  <rect x="375" y="170" width="18" height="75" fill="#111"/>
+  <rect x="415" y="170" width="18" height="75" fill="#111"/>
+  <rect x="455" y="170" width="18" height="75" fill="#111"/>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">Piano Music Generation</text>
+  <text x="400" y="435" text-anchor="middle" fill="#ddd6fe" font-family="Segoe UI,Arial,sans-serif" font-size="17">Deep Learning · RNN · MIDI</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c026d3"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g fill="#fff" opacity="0.9" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">
+    <text x="310" y="190">W</text><text x="360" y="190">O</text><text x="410" y="190">R</text><text x="460" y="190">D</text>
+    <text x="335" y="240">S</text><text x="385" y="240">E</text><text x="435" y="240">A</text>
+    <text x="360" y="290">R</text><text x="410" y="290">C</text><text x="460" y="290">H</text>
+  </g>
+  <rect x="305" y="165" width="170" height="140" fill="none" stroke="#fae8ff" stroke-width="3" rx="4"/>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">Word Search Game</text>
+  <text x="400" y="435" text-anchor="middle" fill="#f5d0fe" font-family="Segoe UI,Arial,sans-serif" font-size="17">Boggle · SpringBoot · JS</text>
+</svg>

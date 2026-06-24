@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="290" y="150" width="220" height="140" rx="16" fill="#292524" stroke="#fcd34d" stroke-width="3"/>
+  <rect x="310" y="175" width="180" height="30" rx="6" fill="#fbbf24"/>
+  <text x="400" y="197" text-anchor="middle" fill="#78350f" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="700">¹ 12,450.00</text>
+  <rect x="310" y="220" width="80" height="35" rx="6" fill="#22c55e"/>
+  <text x="350" y="243" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">Credit</text>
+  <rect x="410" y="220" width="80" height="35" rx="6" fill="#ef4444"/>
+  <text x="450" y="243" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">Debit</text>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">Wallet Web App</text>
+  <text x="400" y="435" text-anchor="middle" fill="#ffedd5" font-family="Segoe UI,Arial,sans-serif" font-size="17">JWT · Spring Security · React</text>
+</svg>

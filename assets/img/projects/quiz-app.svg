@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338ca"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="270" y="150" width="260" height="150" rx="12" fill="#fff" opacity="0.12"/>
+  <text x="300" y="195" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="16">Q1. What is O(n) complexity?</text>
+  <rect x="290" y="210" width="220" height="28" rx="6" fill="#fff" opacity="0.25"/>
+  <rect x="290" y="248" width="220" height="28" rx="6" fill="#fff" opacity="0.18"/>
+  <circle cx="500" cy="224" r="14" fill="#4ade80"/>
+  <text x="400" y="400" text-anchor="middle" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">Quiz Web Application</text>
+  <text x="400" y="435" text-anchor="middle" fill="#fce7f3" font-family="Segoe UI,Arial,sans-serif" font-size="17">Teacher & Student Roles · Full Stack</text>
+</svg>
