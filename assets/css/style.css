@@ -520,6 +520,21 @@ a.hoverline:hover {
   padding-bottom: 20px;
 }
 
+#skills .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#skills .skill-tags .chip {
+  background-color: #e0f2f1;
+  color: #004d40;
+  font-size: 0.9rem;
+  height: auto;
+  line-height: 1.4;
+  padding: 8px 14px;
+}
+
 #skills .col img.responsive-img {
   margin: 0 auto;
   max-height: 80px;
