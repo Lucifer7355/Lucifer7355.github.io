@@ -479,6 +479,7 @@ p { margin: 0; }
   border-bottom: 1px solid rgba(20,23,28,0.12);
 }
 .stats__item:nth-child(odd) { padding-right: 1rem; border-right: 1px solid rgba(20,23,28,0.12); }
+.stats__item:nth-child(even) { padding-left: 1rem; }
 .stats__item dt {
   font-family: var(--font-mono);
   font-size: 0.75rem;
