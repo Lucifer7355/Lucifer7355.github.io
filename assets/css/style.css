@@ -49,7 +49,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
-body.menu-open { overflow: hidden; }
+/* Real scroll-lock (not just overflow:hidden) — iOS Safari lets the background
+   scroll behind a position:fixed overlay unless the body itself is pinned. */
+body.menu-open {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }

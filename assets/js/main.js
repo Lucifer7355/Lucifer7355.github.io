@@ -19,15 +19,21 @@
   var toggle = document.getElementById("nav-toggle");
   var menu = document.getElementById("mobile-menu");
   if (toggle && menu) {
+    var lockedScrollY = 0;
     function openMenu() {
+      lockedScrollY = window.scrollY || window.pageYOffset || 0;
       toggle.setAttribute("aria-expanded", "true");
       menu.classList.add("is-open");
+      document.body.style.top = -lockedScrollY + "px";
       document.body.classList.add("menu-open");
+      menu.scrollTop = 0;
     }
     function closeMenu() {
       toggle.setAttribute("aria-expanded", "false");
       menu.classList.remove("is-open");
       document.body.classList.remove("menu-open");
+      document.body.style.top = "";
+      window.scrollTo(0, lockedScrollY);
     }
     toggle.addEventListener("click", function () {
       var expanded = toggle.getAttribute("aria-expanded") === "true";
