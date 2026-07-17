@@ -502,6 +502,42 @@
           Flagship work in data engineering, backend systems, and enterprise AI — explore featured projects below.
         </p>
         <div class="row">
+
+          <!-- FocusTodo -->
+          <div class="col s12 m6 l4">
+            <div class="card medium featured-project">
+              <div class="card-image waves-effect waves-block waves-light">
+                <span class="featured-badge">Featured</span>
+                <img alt="FocusTodo collaborative todo app" src="/assets/img/focustodo-cover.png" loading="lazy" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">FocusTodo (Collab Todos)<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  Full-stack todo app with shareable realtime rooms — REST for CRUD, STOMP/WebSocket for live sync.
+                </p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text"><small>Accomplishments</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> Java 21, Spring Boot 3, React (Vite), MongoDB, STOMP/SockJS, Docker Compose, Swagger.</li>
+                  <li>Built personal + shared todo lists with search, filters, sort, and offset pagination.</li>
+                  <li>Added Excalidraw-style share links (`/collab/{uuid}`) so multiple browsers can edit the same list live.</li>
+                  <li>Fan-out of create/update/delete/complete over WebSocket topics, with join sync snapshot + presence.</li>
+                  <li>Optimistic locking via `@Version` (409 on conflict) so concurrent edits don't silently overwrite.</li>
+                  <li>Mongo indexes tuned for the hot read paths (completed/time and collaborationId/time).</li>
+                  <li>One-command local run with Docker Compose (frontend, API, Mongo) plus Postman collection and Swagger UI.</li>
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit the GitHub repo for FocusTodo" href="https://github.com/Lucifer7355/FocusTodo-SpringBoot-React-MongoDB"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
           
           <!-- Real-Time UPI Analytics Platform -->
           <div class="col s12 m6 l4">
