@@ -308,9 +308,46 @@
         <span class="section-number">03</span>
         <h2>Projects</h2>
       </div>
-      <p class="section-intro" data-reveal>Flagship work in data engineering, backend systems, and enterprise AI — the rest is one scroll further down.</p>
+      <p class="section-intro" data-reveal>Flagship work in distributed systems, data engineering, backend, and enterprise AI — the rest is one scroll further down.</p>
 
       <div class="project-grid">
+
+        <article class="project-card" data-reveal>
+          <a class="project-card__media" href="https://github.com/Lucifer7355/distributed-job-scheduler" target="_blank" rel="noopener">
+            <img src="/assets/img/distributed-job-scheduler-cover.svg" alt="Distributed Job Scheduler architecture cover" loading="lazy" />
+          </a>
+          <div class="project-card__body">
+            <h3>Distributed Job Scheduler <span class="project-card__tag">Systems</span></h3>
+            <p>Quartz + Kubernetes Cron + Airflow style scheduler — recurring/delayed jobs with horizontal scale and exactly-once claims.</p>
+            <ul class="project-card__highlights">
+              <li>Leader-elected cron materialization; all-active workers compete on a Redis priority queue.</li>
+              <li>Exactly-once claim via Redis lock + Postgres status transition + unique execution token.</li>
+              <li>Retries with exponential backoff, dead-letter queue, heartbeat-based failure recovery; HLD + LLD docs in-repo.</li>
+            </ul>
+            <p class="project-card__stack">Java 21 · Spring Boot · Postgres · Redis · Kafka · Docker Compose · Flyway</p>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/distributed-job-scheduler" target="_blank" rel="noopener">View source ↗</a>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/distributed-job-scheduler/blob/main/docs/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/distributed-job-scheduler/blob/main/docs/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal>
+          <a class="project-card__media" href="https://github.com/Lucifer7355/event-driven-ecommerce-backend" target="_blank" rel="noopener">
+            <img src="/assets/img/event-driven-ecommerce-cover.svg" alt="Event-driven ecommerce backend architecture cover" loading="lazy" />
+          </a>
+          <div class="project-card__body">
+            <h3>Event-Driven E-commerce Backend <span class="project-card__tag">Kafka</span></h3>
+            <p>Distributed checkout across order, inventory, payment, and notification services over Kafka.</p>
+            <ul class="project-card__highlights">
+              <li>Multi-service architecture with async Kafka workflows for reliable checkout.</li>
+              <li>Transactional outbox, saga-style orchestration, and idempotency for safe retries.</li>
+              <li>Docker Compose local stack plus Kubernetes deployment assets for portfolio demos.</li>
+            </ul>
+            <p class="project-card__stack">Java · Spring Boot · Kafka · Microservices · Outbox · Saga · Docker · Kubernetes</p>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/event-driven-ecommerce-backend" target="_blank" rel="noopener">View source ↗</a>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/event-driven-ecommerce-backend/tree/main/docs" target="_blank" rel="noopener">Docs ↗</a>
+          </div>
+        </article>
 
         <article class="project-card" data-reveal>
           <a class="project-card__media" href="https://github.com/Lucifer7355/FocusTodo-SpringBoot-React-MongoDB" target="_blank" rel="noopener">
