@@ -351,6 +351,25 @@
         </article>
 
         <article class="project-card" data-reveal>
+          <a class="project-card__media" href="https://github.com/Lucifer7355/api-gateway-jwt-ratelimit-circuitbreaker" target="_blank" rel="noopener">
+            <img src="/assets/img/api-gateway-cover.svg" alt="API Gateway architecture cover" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="project-card__body">
+            <h3>API Gateway <span class="project-card__tag">Systems</span></h3>
+            <p>Production-style API gateway with JWT auth, rate limiting, circuit breaking, and observability — a custom filter pipeline, not a Spring Cloud Gateway config dump.</p>
+            <ul class="project-card__highlights">
+              <li>Chain-of-Responsibility filter pipeline: observability → routing → auth → rate limit → circuit breaker + proxy.</li>
+              <li>HS256 JWT auth with per-route role checks; Token Bucket / Sliding Window rate limiting, in-memory or Redis Lua for distributed limits.</li>
+              <li>Per-route CLOSED → OPEN → HALF_OPEN circuit breaker; correlation IDs and Micrometer/Prometheus metrics throughout.</li>
+            </ul>
+            <p class="project-card__stack">Java 21 · Spring Boot 3.4 · JJWT · Redis · Micrometer · Prometheus</p>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/api-gateway-jwt-ratelimit-circuitbreaker" target="_blank" rel="noopener">View source ↗</a>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/api-gateway-jwt-ratelimit-circuitbreaker/blob/main/docs/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/api-gateway-jwt-ratelimit-circuitbreaker/blob/main/docs/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal>
           <a class="project-card__media" href="https://github.com/Lucifer7355/event-driven-ecommerce-backend" target="_blank" rel="noopener">
             <img src="/assets/img/event-driven-ecommerce-cover.png" alt="Event-driven ecommerce backend architecture cover" loading="lazy" width="1280" height="800" />
           </a>

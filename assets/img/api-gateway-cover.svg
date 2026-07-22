@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="API Gateway cover">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg3)"/>
+
+  <!-- client -->
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.9">
+    <rect x="70" y="360" width="180" height="90" rx="14"/>
+  </g>
+  <text x="160" y="412" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26">Client</text>
+  <text x="160" y="360" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18">Bearer JWT</text>
+
+  <line x1="250" y1="405" x2="360" y2="405" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+
+  <!-- gateway pipeline -->
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.95">
+    <rect x="370" y="220" width="180" height="90" rx="14"/>
+    <rect x="370" y="330" width="180" height="90" rx="14"/>
+    <rect x="370" y="440" width="180" height="90" rx="14"/>
+    <rect x="370" y="550" width="180" height="90" rx="14"/>
+  </g>
+  <g fill="#e2e8f0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" text-anchor="middle">
+    <text x="460" y="272">Auth (JWT)</text>
+    <text x="460" y="382">Rate Limit</text>
+    <text x="460" y="492">Circuit Breaker</text>
+    <text x="460" y="602">Proxy</text>
+  </g>
+  <line x1="460" y1="310" x2="460" y2="330" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+  <line x1="460" y1="420" x2="460" y2="440" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+  <line x1="460" y1="530" x2="460" y2="550" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+
+  <line x1="550" y1="405" x2="660" y2="405" stroke="#38bdf8" stroke-width="2.5" opacity="0.7"/>
+
+  <!-- upstreams -->
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.9">
+    <rect x="670" y="220" width="230" height="90" rx="14"/>
+    <rect x="670" y="360" width="230" height="90" rx="14"/>
+    <rect x="670" y="500" width="230" height="90" rx="14"/>
+  </g>
+  <g fill="#e2e8f0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" text-anchor="middle">
+    <text x="785" y="272">Orders</text>
+    <text x="785" y="412">Payments</text>
+    <text x="785" y="552">Flaky Upstream</text>
+  </g>
+
+  <!-- redis -->
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.9">
+    <rect x="990" y="360" width="220" height="90" rx="14"/>
+  </g>
+  <text x="1100" y="412" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22">Redis (optional)</text>
+  <line x1="550" y1="375" x2="1000" y2="390" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,6" opacity="0.6"/>
+
+  <text x="640" y="110" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="48" font-weight="700">API Gateway</text>
+  <text x="640" y="155" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24">JWT · Rate Limiting · Circuit Breaker · Observability</text>
+</svg>
