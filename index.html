@@ -332,6 +332,25 @@
         </article>
 
         <article class="project-card" data-reveal>
+          <a class="project-card__media" href="https://github.com/Lucifer7355/notification-platform" target="_blank" rel="noopener">
+            <img src="/assets/img/notification-platform-cover.svg" alt="Notification Platform architecture cover" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="project-card__body">
+            <h3>Notification Platform <span class="project-card__tag">Systems</span></h3>
+            <p>Multi-channel notification service — Email, SMS, WhatsApp, Push, and Slack — built on real infra, not in-memory stubs.</p>
+            <ul class="project-card__highlights">
+              <li>Kafka-backed ingress with an in-process priority queue, scheduled sends, and a DB + Kafka DLQ for exhausted retries.</li>
+              <li>Redis-enforced idempotency keys and rate limiting, with exponential backoff on failed deliveries.</li>
+              <li>Template rendering, delivery analytics, and a local provider inbox for non-email channels; SMTP → MailHog for email.</li>
+            </ul>
+            <p class="project-card__stack">Java 21 · Spring Boot 3 · Postgres · Redis · Kafka · MailHog · Flyway · Docker Compose</p>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/notification-platform" target="_blank" rel="noopener">View source ↗</a>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/notification-platform/blob/main/docs/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+            <a class="project-card__link" href="https://github.com/Lucifer7355/notification-platform/blob/main/docs/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal>
           <a class="project-card__media" href="https://github.com/Lucifer7355/event-driven-ecommerce-backend" target="_blank" rel="noopener">
             <img src="/assets/img/event-driven-ecommerce-cover.png" alt="Event-driven ecommerce backend architecture cover" loading="lazy" width="1280" height="800" />
           </a>

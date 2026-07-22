@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="Notification Platform cover">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg2)"/>
+
+  <!-- channel nodes -->
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.9">
+    <rect x="90"  y="200" width="200" height="90" rx="14"/>
+    <rect x="90"  y="320" width="200" height="90" rx="14"/>
+    <rect x="90"  y="440" width="200" height="90" rx="14"/>
+    <rect x="90"  y="560" width="200" height="90" rx="14"/>
+  </g>
+  <g fill="#e2e8f0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" text-anchor="middle">
+    <text x="190" y="252">Email</text>
+    <text x="190" y="372">SMS</text>
+    <text x="190" y="492">WhatsApp</text>
+    <text x="190" y="612">Push / Slack</text>
+  </g>
+
+  <!-- arrows to kafka -->
+  <g stroke="#38bdf8" stroke-width="2.5" opacity="0.7">
+    <line x1="290" y1="245" x2="470" y2="360"/>
+    <line x1="290" y1="365" x2="470" y2="380"/>
+    <line x1="290" y1="485" x2="470" y2="400"/>
+    <line x1="290" y1="605" x2="470" y2="420"/>
+  </g>
+
+  <!-- kafka / core -->
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.95">
+    <rect x="480" y="320" width="260" height="140" rx="16"/>
+  </g>
+  <g fill="#e2e8f0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" text-anchor="middle">
+    <text x="610" y="380">Kafka</text>
+    <text x="610" y="415">Priority Queue</text>
+  </g>
+
+  <!-- arrows to postgres/redis/dlq -->
+  <g stroke="#38bdf8" stroke-width="2.5" opacity="0.7">
+    <line x1="740" y1="360" x2="920" y2="270"/>
+    <line x1="740" y1="390" x2="920" y2="390"/>
+    <line x1="740" y1="420" x2="920" y2="510"/>
+  </g>
+
+  <g stroke="#38bdf8" stroke-width="3" fill="none" opacity="0.9">
+    <rect x="930" y="220" width="260" height="100" rx="14"/>
+    <rect x="930" y="340" width="260" height="100" rx="14"/>
+    <rect x="930" y="460" width="260" height="100" rx="14"/>
+  </g>
+  <g fill="#e2e8f0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" text-anchor="middle">
+    <text x="1060" y="276">Postgres</text>
+    <text x="1060" y="396">Redis</text>
+    <text x="1060" y="516">DLQ / Retry</text>
+  </g>
+
+  <text x="640" y="110" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="48" font-weight="700">Notification Platform</text>
+  <text x="640" y="155" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24">Multi-channel · Kafka-backed · Retries + DLQ</text>
+</svg>
