@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-label="Mini Elasticsearch architecture diagram">
+  <title>Mini Elasticsearch architecture</title>
+  <desc>Query to tokenize and synonym expand to distributed shard search to BM25/TF-IDF merge to highlighted hits</desc>
+
+  <rect width="960" height="300" fill="#0b1220"/>
+
+  <text x="32" y="40" fill="#2dd4bf" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">MINI ELASTICSEARCH</text>
+
+  <!-- Query box -->
+  <rect x="40" y="90" width="120" height="56" rx="8" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+  <text x="100" y="114" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600">Query</text>
+  <text x="100" y="132" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">tokenize + synonyms</text>
+
+  <!-- Shard cluster box -->
+  <rect x="220" y="55" width="330" height="130" rx="8" fill="#111827" stroke="#2dd4bf" stroke-width="1.5"/>
+  <text x="385" y="76" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Distributed Index (scatter-gather)</text>
+
+  <rect x="236" y="90" width="90" height="70" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.3"/>
+  <text x="281" y="118" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Shard 0</text>
+  <text x="281" y="134" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">index + trie</text>
+
+  <rect x="340" y="90" width="90" height="70" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.3"/>
+  <text x="385" y="118" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Shard 1</text>
+  <text x="385" y="134" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">index + trie</text>
+
+  <rect x="444" y="90" width="90" height="70" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.3"/>
+  <text x="489" y="118" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Shard 2</text>
+  <text x="489" y="134" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">index + trie</text>
+
+  <!-- Rank/merge box -->
+  <rect x="620" y="90" width="140" height="60" rx="8" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+  <text x="690" y="114" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">BM25 / TF-IDF</text>
+  <text x="690" y="132" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">merge + sort</text>
+
+  <!-- Hits box -->
+  <rect x="800" y="90" width="130" height="60" rx="8" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+  <text x="865" y="114" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Highlighted</text>
+  <text x="865" y="132" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">hits</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="118" x2="220" y2="118" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="220,118 212,114 212,122" fill="#2dd4bf"/>
+
+  <line x1="550" y1="118" x2="620" y2="118" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="620,118 612,114 612,122" fill="#2dd4bf"/>
+
+  <line x1="760" y1="118" x2="800" y2="118" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="800,118 792,114 792,122" fill="#2dd4bf"/>
+
+  <text x="32" y="230" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Routing: shard_id = md5(doc_id) % num_shards</text>
+  <text x="32" y="252" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Features: inverted index | autocomplete trie | synonyms | highlighting | BM25 + TF-IDF</text>
+</svg>
