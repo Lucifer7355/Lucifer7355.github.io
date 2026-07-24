@@ -412,11 +412,11 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>Mini Elasticsearch <span class="project-card__tag">Search</span></h3>
-<p>Portfolio-grade search engine inspired by Elasticsearch — inverted index, BM25/TF-IDF ranking, autocomplete, synonyms, and highlighting, built from scratch.</p>
+<p>I wanted to actually understand how a search engine works under the hood, so I built a small one myself — no Lucene, no Elasticsearch library, just the core ideas coded from scratch.</p>
 <ul class="project-card__highlights">
-<li>Custom inverted index with BM25 and TF-IDF ranking for relevance-scored search results.</li>
-<li>Trie-based autocomplete, synonym expansion, and result highlighting layered on top of the core index.</li>
-<li>Distributed indexing with MD5-based shard routing and scatter-gather search across shards.</li>
+<li>Wrote my own inverted index and ranked results with BM25 and TF-IDF instead of just doing keyword matching.</li>
+<li>Added a trie for autocomplete, handled synonyms, and highlighted matched terms in the results.</li>
+<li>Split the index across shards (routed by hashing the doc id) and query all of them in parallel, then merge the results.</li>
 </ul>
 <p class="project-card__stack">Python · FastAPI · Inverted Index · BM25 · TF-IDF · Distributed Sharding</p>
 <a class="project-card__link" href="https://github.com/Lucifer7355/mini-elasticsearch" target="_blank" rel="noopener">View source ↗</a>
