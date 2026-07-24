@@ -424,6 +424,23 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </article>
 
 <article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/uber-backend" target="_blank" rel="noopener">
+<img src="/assets/img/uber-backend-cover.svg" alt="Ride-hailing backend architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Uber Backend <span class="project-card__tag">Systems</span></h3>
+<p>I always wondered how an app like Uber actually finds you a driver in real time, so I built the backend for that myself — just the ride-hailing logic, no frontend needed.</p>
+<ul class="project-card__highlights">
+<li>Track live driver locations with Redis GEO and match riders to the nearest free driver, guarding the claim with a putIfAbsent so two riders can never end up with the same driver.</li>
+<li>Modeled the whole trip as a real state machine — you can't jump straight from MATCHED to COMPLETED, every status change gets validated.</li>
+<li>Surge pricing reacts per geohash cell based on actual demand vs supply, and Kafka carries location/trip/notification events end-to-end into a WebSocket that pushes live trip updates to the rider.</li>
+</ul>
+<p class="project-card__stack">Java 21 · Spring Boot · Redis GEO · Kafka · WebSocket · Docker Compose</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/uber-backend" target="_blank" rel="noopener">View source ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
 <a class="project-card__media" href="https://github.com/Lucifer7355/FocusTodo-SpringBoot-React-MongoDB" target="_blank" rel="noopener">
 <img src="/assets/img/focustodo-cover.png" alt="FocusTodo collaborative todo app interface" loading="lazy" />
 </a>
