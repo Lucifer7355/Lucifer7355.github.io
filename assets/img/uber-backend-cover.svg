@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-label="Uber-style ride-hailing backend architecture diagram">
+  <title>Ride-hailing backend architecture</title>
+  <desc>Driver pings to location service with Redis GEO to matching and trip service to surge pricing and Kafka notifications to WebSocket push</desc>
+
+  <rect width="960" height="300" fill="#0b1220"/>
+
+  <text x="32" y="40" fill="#2dd4bf" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">RIDE-HAILING BACKEND</text>
+
+  <!-- Driver pings -->
+  <rect x="32" y="100" width="120" height="60" rx="8" fill="#111827" stroke="#334155" stroke-width="1.5"/>
+  <text x="92" y="126" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Driver</text>
+  <text x="92" y="142" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">location pings</text>
+
+  <!-- Location service -->
+  <rect x="200" y="90" width="150" height="80" rx="8" fill="#111827" stroke="#2dd4bf" stroke-width="1.5"/>
+  <text x="275" y="118" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Location Service</text>
+  <text x="275" y="136" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">Redis GEO</text>
+  <text x="275" y="152" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">geohash cells</text>
+
+  <!-- Matching + trip -->
+  <rect x="398" y="80" width="170" height="100" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="483" y="108" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Matching + Trip</text>
+  <text x="483" y="126" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">nearest-driver claim</text>
+  <text x="483" y="142" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">trip state machine</text>
+
+  <!-- Surge pricing -->
+  <rect x="616" y="30" width="150" height="70" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.3"/>
+  <text x="691" y="58" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Surge Pricing</text>
+  <text x="691" y="76" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">demand vs supply</text>
+  <text x="691" y="90" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">per geohash cell</text>
+
+  <!-- Kafka -->
+  <rect x="616" y="130" width="150" height="60" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.3"/>
+  <text x="691" y="155" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Kafka</text>
+  <text x="691" y="173" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">location · trip · notify</text>
+
+  <!-- WebSocket / rider -->
+  <rect x="808" y="130" width="130" height="60" rx="8" fill="#111827" stroke="#2dd4bf" stroke-width="1.5"/>
+  <text x="873" y="155" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">WebSocket</text>
+  <text x="873" y="173" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">live trip updates</text>
+
+  <!-- Arrows -->
+  <line x1="152" y1="130" x2="200" y2="130" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="200,130 192,126 192,134" fill="#2dd4bf"/>
+
+  <line x1="350" y1="130" x2="398" y2="130" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="398,130 390,126 390,134" fill="#2dd4bf"/>
+
+  <line x1="568" y1="110" x2="616" y2="80" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="616,80 606,80 611,89" fill="#38bdf8"/>
+
+  <line x1="568" y1="150" x2="616" y2="160" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="616,160 607,155 606,164" fill="#38bdf8"/>
+
+  <line x1="766" y1="160" x2="808" y2="160" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="808,160 800,156 800,164" fill="#2dd4bf"/>
+
+  <text x="32" y="230" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Driver claim uses putIfAbsent so two riders never get the same driver.</text>
+  <text x="32" y="252" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Features: Redis GEO · geohash surge · trip state machine · Kafka events · WebSocket push</text>
+</svg>
