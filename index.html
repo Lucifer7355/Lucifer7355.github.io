@@ -424,6 +424,25 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </article>
 
 <article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/mini-redis" target="_blank" rel="noopener">
+<img src="/assets/img/mini-redis-cover.svg" alt="Mini Redis architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Mini Redis <span class="project-card__tag">Systems</span></h3>
+<p>I've leaned on Redis for caching more times than I can count on the job, but I'd never actually built one — so I wrote a small version myself in Java, from LRU eviction up to cluster routing.</p>
+<ul class="project-card__highlights">
+<li>Wrote my own LRU eviction and TTL expiry for the core cache, then layered on RDB-style snapshots and an AOF log so a restart doesn't wipe the data.</li>
+<li>Consistent hashing with virtual nodes routes keys across shards through a ClusterManager, so scaling out is just adding another shard node.</li>
+<li>Leader-follower replication and pub/sub sit on top of the same cache core instead of being bolted on as an afterthought.</li>
+</ul>
+<p class="project-card__stack">Java 21 · LRU Eviction · TTL · RDB/AOF Persistence · Leader-Follower Replication · Consistent Hashing · Pub/Sub</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/mini-redis" target="_blank" rel="noopener">View source ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/mini-redis/blob/master/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/mini-redis/blob/master/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
 <a class="project-card__media" href="https://github.com/Lucifer7355/uber-backend" target="_blank" rel="noopener">
 <img src="/assets/img/uber-backend-cover.svg" alt="Ride-hailing backend architecture cover" loading="lazy" width="1280" height="800" />
 </a>
