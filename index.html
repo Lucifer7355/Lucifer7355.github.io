@@ -318,7 +318,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>Distributed Job Scheduler <span class="project-card__tag">Systems</span></h3>
-<p>Quartz + Kubernetes Cron + Airflow style scheduler — recurring/delayed jobs with horizontal scale and exactly-once claims.</p>
+<p>A scheduler in the spirit of Quartz, Kubernetes Cron, and Airflow, built to handle recurring and delayed jobs at horizontal scale with exactly-once claims.</p>
 <ul class="project-card__highlights">
 <li>Leader-elected cron materialization; all-active workers compete on a Redis priority queue.</li>
 <li>Exactly-once claim via Redis lock + Postgres status transition + unique execution token.</li>
@@ -337,7 +337,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>Notification Platform <span class="project-card__tag">Systems</span></h3>
-<p>Multi-channel notification service — Email, SMS, WhatsApp, Push, and Slack — built on real infra, not in-memory stubs.</p>
+<p>A multi-channel notification service covering Email, SMS, WhatsApp, Push, and Slack, built on real infrastructure instead of in-memory stubs.</p>
 <ul class="project-card__highlights">
 <li>Kafka-backed ingress with an in-process priority queue, scheduled sends, and a DB + Kafka DLQ for exhausted retries.</li>
 <li>Redis-enforced idempotency keys and rate limiting, with exponential backoff on failed deliveries.</li>
@@ -356,7 +356,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>API Gateway <span class="project-card__tag">Systems</span></h3>
-<p>Production-style API gateway with JWT auth, rate limiting, circuit breaking, and observability — a custom filter pipeline, not a Spring Cloud Gateway config dump.</p>
+<p>A production-style API gateway with JWT auth, rate limiting, circuit breaking, and observability, built as a custom filter pipeline instead of a Spring Cloud Gateway config dump.</p>
 <ul class="project-card__highlights">
 <li>Chain-of-Responsibility filter pipeline: observability → routing → auth → rate limit → circuit breaker + proxy.</li>
 <li>HS256 JWT auth with per-route role checks; Token Bucket / Sliding Window rate limiting, in-memory or Redis Lua for distributed limits.</li>
@@ -393,10 +393,10 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>StreamPulse <span class="project-card__tag">Kafka</span></h3>
-<p>Real-time e-commerce analytics pipeline — Kafka ingestion, windowed stream processing, ClickHouse OLAP, and a live dashboard.</p>
+<p>A real-time e-commerce analytics pipeline covering Kafka ingestion, windowed stream processing, ClickHouse OLAP, and a live dashboard.</p>
 <ul class="project-card__highlights">
 <li>Tumbling and session windows (Flink-style, with optional Flink SQL) computing per-minute revenue, volume, and conversion metrics.</li>
-<li>Real-time fraud rules — purchase velocity, high-value, and geo-mismatch checks — with a dead-letter queue for invalid events.</li>
+<li>Real-time fraud rules covering purchase velocity, high-value transactions, and geo-mismatch checks, with a dead-letter queue for invalid events.</li>
 <li>ClickHouse modeling with MergeTree/ReplacingMergeTree, TTL, and materialized views; FastAPI + React dashboard polling every 4s.</li>
 </ul>
 <p class="project-card__stack">Kafka · Flink · ClickHouse · FastAPI · React · Docker Compose</p>
@@ -412,7 +412,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>Mini Elasticsearch <span class="project-card__tag">Search</span></h3>
-<p>I wanted to actually understand how a search engine works under the hood, so I built a small one myself — no Lucene, no Elasticsearch library, just the core ideas coded from scratch.</p>
+<p>I wanted to actually understand how a search engine works under the hood, so I built a small one myself. No Lucene, no Elasticsearch library, just the core ideas coded from scratch.</p>
 <ul class="project-card__highlights">
 <li>Wrote my own inverted index and ranked results with BM25 and TF-IDF instead of just doing keyword matching.</li>
 <li>Added a trie for autocomplete, handled synonyms, and highlighted matched terms in the results.</li>
@@ -424,12 +424,31 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </article>
 
 <article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/mini-redis" target="_blank" rel="noopener">
+<img src="/assets/img/mini-redis-cover.svg" alt="Mini Redis architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Mini Redis <span class="project-card__tag">Systems</span></h3>
+<p>I've used Redis for caching more times than I can count at work, but I never actually built one myself. So I sat down and wrote a small version in Java, starting from basic eviction and working all the way up to cluster routing.</p>
+<ul class="project-card__highlights">
+<li>Wrote my own LRU eviction and TTL expiry for the core cache, then added RDB style snapshots and an AOF log so a restart doesn't wipe the data.</li>
+<li>Consistent hashing with virtual nodes routes keys across shards through a ClusterManager, so scaling out just means adding another shard node.</li>
+<li>Leader and follower replication plus pub/sub sit on top of the same cache core instead of being bolted on as an afterthought.</li>
+</ul>
+<p class="project-card__stack">Java 21 · LRU Eviction · TTL · RDB/AOF Persistence · Leader-Follower Replication · Consistent Hashing · Pub/Sub</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/mini-redis" target="_blank" rel="noopener">View source ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/mini-redis/blob/master/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/mini-redis/blob/master/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
 <a class="project-card__media" href="https://github.com/Lucifer7355/uber-backend" target="_blank" rel="noopener">
 <img src="/assets/img/uber-backend-cover.svg" alt="Ride-hailing backend architecture cover" loading="lazy" width="1280" height="800" />
 </a>
 <div class="project-card__body">
 <h3>Uber Backend <span class="project-card__tag">Systems</span></h3>
-<p>I always wondered how an app like Uber actually finds you a driver in real time, so I built the backend for that myself — just the ride-hailing logic, no frontend needed.</p>
+<p>I always wondered how an app like Uber actually finds you a driver in real time, so I built the backend for that myself. Just the ride-hailing logic, no frontend needed.</p>
 <ul class="project-card__highlights">
 <li>Track live driver locations with Redis GEO and match riders to the nearest free driver, guarding the claim with a putIfAbsent so two riders can never end up with the same driver.</li>
 <li>Modeled the whole trip as a real state machine — you can't jump straight from MATCHED to COMPLETED, every status change gets validated.</li>
@@ -465,7 +484,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>FocusTodo <span class="project-card__tag">Collab Todos</span></h3>
-<p>Full-stack todo app with shareable realtime rooms — REST for CRUD, STOMP/WebSocket for live sync.</p>
+<p>A full-stack todo app with shareable realtime rooms, using REST for CRUD and STOMP/WebSocket for live sync.</p>
 <ul class="project-card__highlights">
 <li>Excalidraw-style share links so multiple browsers edit the same list live.</li>
 <li>Optimistic locking via <code>@Version</code> (409 on conflict) so concurrent edits don't silently overwrite.</li>
@@ -482,7 +501,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>Real-Time UPI Analytics Platform</h3>
-<p>Production-grade, end-to-end data engineering pipeline for real-time UPI transaction analytics.</p>
+<p>A complete data engineering pipeline for real-time UPI transaction analytics, from ingestion all the way to dashboards.</p>
 <ul class="project-card__highlights">
 <li>Kafka ingestion with Flink for real-time validation and cleaning.</li>
 <li>dbt transformation models plus Airflow DAGs for daily batch aggregations.</li>
@@ -499,7 +518,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>Enterprise RAG Intelligence Platform</h3>
-<p>Plug-and-play enterprise AI assistant with config-driven RBAC, hybrid retrieval, and knowledge graph reasoning.</p>
+<p>An enterprise AI assistant with role based access control, hybrid retrieval, and knowledge graph reasoning, designed to plug into a company's existing systems.</p>
 <ul class="project-card__highlights">
 <li>Hybrid retrieval — dense (BGE + Qdrant) and sparse (BM25 + Elasticsearch) — with cross-encoder reranking.</li>
 <li>Retrieval-time role filtering and PII/secret blocking for unauthorized roles.</li>
@@ -533,7 +552,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </a>
 <div class="project-card__body">
 <h3>PDF Toolbox API <span class="project-card__tag">Go</span></h3>
-<p>Production Go microservice for merge, split, compress, encrypt, and convert — outputs land on Cloudflare R2 with a public URL.</p>
+<p>A Go microservice for merge, split, compress, encrypt, and convert, with outputs landing on Cloudflare R2 with a public URL.</p>
 <ul class="project-card__highlights">
 <li>Multi-endpoint processing: merge, split, compress, encrypt/decrypt, doc-to-PDF.</li>
 <li>Containerized with qpdf, ghostscript, poppler-utils, and LibreOffice.</li>
