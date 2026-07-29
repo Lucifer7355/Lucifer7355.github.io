@@ -498,6 +498,25 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </article>
 
 <article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/figma-clone" target="_blank" rel="noopener">
+<img src="/assets/img/figma-clone-cover.svg" alt="Realtime multiplayer canvas editor architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Canvas Studio <span class="project-card__tag">Systems</span></h3>
+<p>I wanted to see how far a simple last write wins model could take a shared canvas before you actually need a CRDT. So I built a multiplayer whiteboard where everyone draws on the same shapes over one WebSocket room.</p>
+<ul class="project-card__highlights">
+<li>The server just keeps a shapes map and a versions array in memory, and whichever update lands last for a shape wins. No operational transforms, no CRDT merge logic, and that trade off is fine until you actually need multi team scale.</li>
+<li>Camera position and zoom stay local to each browser so panning around doesn't spam the room, while shapes, cursors, and presence all sync over the same socket.</li>
+<li>Version history is capped at fifty named snapshots written to a JSON file on disk, and restoring one is just swapping in an older shapes map.</li>
+</ul>
+<p class="project-card__stack">React · Konva · Zustand · WebSockets · Express · Node.js</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/figma-clone" target="_blank" rel="noopener">View source ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/figma-clone/blob/master/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/figma-clone/blob/master/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
 <a class="project-card__media" href="https://github.com/Lucifer7355/FocusTodo-SpringBoot-React-MongoDB" target="_blank" rel="noopener">
 <img src="/assets/img/focustodo-cover.png" alt="FocusTodo collaborative todo app interface" loading="lazy" />
 </a>
