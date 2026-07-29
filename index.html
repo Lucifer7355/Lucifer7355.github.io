@@ -479,6 +479,25 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </article>
 
 <article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/google-docs-clone" target="_blank" rel="noopener">
+<img src="/assets/img/google-docs-clone-cover.svg" alt="Collaborative docs editor architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Collaborative Docs Editor <span class="project-card__tag">Systems</span></h3>
+<p>I wanted multiple people typing into the same document at once without any locking, and edits still merging cleanly even after someone goes offline. So I built this with Yjs CRDTs instead of trying to hand roll operational transforms.</p>
+<ul class="project-card__highlights">
+<li>Every client holds a full Y.Doc and the updates are binary blobs that commute, so the server ends up being just a relay and a place to persist state, not a merge authority.</li>
+<li>IndexedDB keeps taking edits while you are offline, and the WebSocket provider resyncs the missing updates automatically once you reconnect.</li>
+<li>Version history is real snapshots of the encoded Yjs state on disk, and restoring one writes to disk and asks the client to reload instead of trying to rewind a live room mid flight.</li>
+</ul>
+<p class="project-card__stack">Next.js · Lexical · Yjs · WebSockets · IndexedDB · Zustand</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/google-docs-clone" target="_blank" rel="noopener">View source ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/google-docs-clone/blob/master/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/google-docs-clone/blob/master/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
 <a class="project-card__media" href="https://github.com/Lucifer7355/FocusTodo-SpringBoot-React-MongoDB" target="_blank" rel="noopener">
 <img src="/assets/img/focustodo-cover.png" alt="FocusTodo collaborative todo app interface" loading="lazy" />
 </a>
