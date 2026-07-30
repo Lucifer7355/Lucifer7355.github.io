@@ -407,6 +407,25 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </article>
 
 <article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/netflix-streaming-analytics" target="_blank" rel="noopener">
+<img src="/assets/img/netflix-streaming-analytics-cover.svg" alt="Netflix style streaming analytics architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Netflix Streaming Analytics <span class="project-card__tag">Kafka</span></h3>
+<p>I wanted to see the same playback event feed answer two different questions at once, what is happening right now and what happened today, without those two answers ever disagreeing with each other. So I built a pipeline that pushes every play, pause, seek, and buffer through Kafka into both a realtime job and a daily job.</p>
+<ul class="project-card__highlights">
+<li>Flink keeps 60 second tumbling windows for live top shows, watch time, and session length, while Spark groups the same events by day, show, country, and device for the daily rollup.</li>
+<li>Both jobs share one watch time rule. Play, pause, and buffer events update a running position, and seeks get capped at 300 seconds so a single scrub never looks like five minutes of watching.</li>
+<li>Everything lands in ClickHouse, or a plain JSON file when there is no ClickHouse running, and a small FastAPI dashboard reads it to show top shows, churn scores, and show recommendations.</li>
+</ul>
+<p class="project-card__stack">Python · Kafka · Flink · Spark · ClickHouse · FastAPI</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/netflix-streaming-analytics" target="_blank" rel="noopener">View source ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/netflix-streaming-analytics/blob/main/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/netflix-streaming-analytics/blob/main/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
 <a class="project-card__media" href="https://github.com/Lucifer7355/mini-elasticsearch" target="_blank" rel="noopener">
 <img src="/assets/img/mini-elasticsearch-cover.svg" alt="Mini Elasticsearch architecture cover" loading="lazy" width="1280" height="800" />
 </a>
