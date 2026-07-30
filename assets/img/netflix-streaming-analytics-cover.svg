@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-label="Netflix style streaming analytics architecture diagram">
+  <title>Streaming analytics architecture</title>
+  <desc>Playback events flow through Kafka into a Flink realtime job and a Spark daily job, both landing in ClickHouse, feeding a dashboard with churn and recommendation models</desc>
+
+  <rect width="960" height="300" fill="#0b1220"/>
+
+  <text x="32" y="40" fill="#2dd4bf" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">STREAMING ANALYTICS PIPELINE</text>
+
+  <!-- Kafka -->
+  <rect x="32" y="110" width="150" height="90" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="107" y="140" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Kafka</text>
+  <text x="107" y="158" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">playback-events</text>
+  <text x="107" y="174" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">play, pause, seek</text>
+  <text x="107" y="190" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">login, logout, buffer</text>
+
+  <!-- Flink -->
+  <rect x="238" y="65" width="170" height="80" rx="8" fill="#111827" stroke="#2dd4bf" stroke-width="1.5"/>
+  <text x="323" y="92" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Flink job</text>
+  <text x="323" y="108" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">60s tumbling windows</text>
+  <text x="323" y="124" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">top shows, watch time</text>
+
+  <!-- Spark -->
+  <rect x="238" y="160" width="170" height="80" rx="8" fill="#111827" stroke="#2dd4bf" stroke-width="1.5"/>
+  <text x="323" y="187" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Spark daily job</text>
+  <text x="323" y="203" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">group by day, show,</text>
+  <text x="323" y="219" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">country, device</text>
+
+  <!-- ClickHouse -->
+  <rect x="464" y="100" width="160" height="100" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.3"/>
+  <text x="544" y="128" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">ClickHouse</text>
+  <text x="544" y="146" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="9">daily_show_metrics</text>
+  <text x="544" y="162" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="9">realtime_snapshots</text>
+  <text x="544" y="178" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="9">or metrics_store.json</text>
+
+  <!-- Dashboard + ML -->
+  <rect x="710" y="90" width="218" height="120" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="819" y="118" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Dashboard</text>
+  <text x="819" y="136" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">FastAPI + one HTML page</text>
+  <text x="819" y="154" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">churn probability model</text>
+  <text x="819" y="172" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">item-item recommendations</text>
+  <text x="819" y="190" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">re-run pipeline button</text>
+
+  <!-- Arrows: Kafka -> Flink / Spark -->
+  <line x1="182" y1="130" x2="238" y2="105" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="238,105 228,105 233,96" fill="#38bdf8"/>
+  <line x1="182" y1="170" x2="238" y2="200" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="238,200 228,200 231,210" fill="#38bdf8"/>
+
+  <!-- Arrows: Flink / Spark -> ClickHouse -->
+  <line x1="408" y1="110" x2="464" y2="135" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="464,135 456,130 452,139" fill="#2dd4bf"/>
+  <line x1="408" y1="200" x2="464" y2="165" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="464,165 456,168 460,159" fill="#2dd4bf"/>
+
+  <!-- Arrow: ClickHouse -> Dashboard -->
+  <line x1="624" y1="150" x2="710" y2="150" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="710,150 700,146 700,154" fill="#38bdf8"/>
+
+  <text x="32" y="248" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Flink and Spark share the same watch time rule, so the live view and the daily view never argue with each other.</text>
+  <text x="32" y="270" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Docker only starts Redpanda and ClickHouse. Locally it all runs as plain Python modules against a JSON file.</text>
+</svg>
