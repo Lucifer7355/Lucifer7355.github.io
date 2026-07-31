@@ -320,9 +320,9 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 <h3>Distributed Job Scheduler <span class="project-card__tag">Systems</span></h3>
 <p>A scheduler in the spirit of Quartz, Kubernetes Cron, and Airflow, built to handle recurring and delayed jobs at horizontal scale with exactly-once claims.</p>
 <ul class="project-card__highlights">
-<li>Leader-elected cron materialization; all-active workers compete on a Redis priority queue.</li>
+<li>Leader-elected cron materialization, and all-active workers compete on a Redis priority queue.</li>
 <li>Exactly-once claim via Redis lock + Postgres status transition + unique execution token.</li>
-<li>Retries with exponential backoff, dead-letter queue, heartbeat-based failure recovery; HLD + LLD docs in-repo.</li>
+<li>Retries with exponential backoff, dead-letter queue, and heartbeat-based failure recovery, with HLD and LLD docs in-repo.</li>
 </ul>
 <p class="project-card__stack">Java 21 · Spring Boot · Postgres · Redis · Kafka · Docker Compose · Flyway</p>
 <a class="project-card__link" href="https://github.com/Lucifer7355/distributed-job-scheduler" target="_blank" rel="noopener">View source ↗</a>
@@ -341,7 +341,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 <ul class="project-card__highlights">
 <li>Kafka-backed ingress with an in-process priority queue, scheduled sends, and a DB + Kafka DLQ for exhausted retries.</li>
 <li>Redis-enforced idempotency keys and rate limiting, with exponential backoff on failed deliveries.</li>
-<li>Template rendering, delivery analytics, and a local provider inbox for non-email channels; SMTP → MailHog for email.</li>
+<li>Template rendering, delivery analytics, and a local provider inbox for non-email channels, with SMTP through MailHog for email.</li>
 </ul>
 <p class="project-card__stack">Java 21 · Spring Boot 3 · Postgres · Redis · Kafka · MailHog · Flyway · Docker Compose</p>
 <a class="project-card__link" href="https://github.com/Lucifer7355/notification-platform" target="_blank" rel="noopener">View source ↗</a>
@@ -359,8 +359,8 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 <p>A production-style API gateway with JWT auth, rate limiting, circuit breaking, and observability, built as a custom filter pipeline instead of a Spring Cloud Gateway config dump.</p>
 <ul class="project-card__highlights">
 <li>Chain-of-Responsibility filter pipeline: observability → routing → auth → rate limit → circuit breaker + proxy.</li>
-<li>HS256 JWT auth with per-route role checks; Token Bucket / Sliding Window rate limiting, in-memory or Redis Lua for distributed limits.</li>
-<li>Per-route CLOSED → OPEN → HALF_OPEN circuit breaker; correlation IDs and Micrometer/Prometheus metrics throughout.</li>
+<li>HS256 JWT auth with per-route role checks, plus Token Bucket / Sliding Window rate limiting, in-memory or Redis Lua for distributed limits.</li>
+<li>Per-route CLOSED → OPEN → HALF_OPEN circuit breaker, plus correlation IDs and Micrometer/Prometheus metrics throughout.</li>
 </ul>
 <p class="project-card__stack">Java 21 · Spring Boot 3.4 · JJWT · Redis · Micrometer · Prometheus</p>
 <a class="project-card__link" href="https://github.com/Lucifer7355/api-gateway-jwt-ratelimit-circuitbreaker" target="_blank" rel="noopener">View source ↗</a>
@@ -397,7 +397,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 <ul class="project-card__highlights">
 <li>Tumbling and session windows (Flink-style, with optional Flink SQL) computing per-minute revenue, volume, and conversion metrics.</li>
 <li>Real-time fraud rules covering purchase velocity, high-value transactions, and geo-mismatch checks, with a dead-letter queue for invalid events.</li>
-<li>ClickHouse modeling with MergeTree/ReplacingMergeTree, TTL, and materialized views; FastAPI + React dashboard polling every 4s.</li>
+<li>ClickHouse modeling with MergeTree/ReplacingMergeTree, TTL, and materialized views, and a FastAPI + React dashboard polling every 4s.</li>
 </ul>
 <p class="project-card__stack">Kafka · Flink · ClickHouse · FastAPI · React · Docker Compose</p>
 <a class="project-card__link" href="https://github.com/Lucifer7355/streampulse/tree/master" target="_blank" rel="noopener">View source ↗</a>
@@ -422,6 +422,25 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 <a class="project-card__link" href="https://github.com/Lucifer7355/netflix-streaming-analytics" target="_blank" rel="noopener">View source ↗</a>
 <a class="project-card__link" href="https://github.com/Lucifer7355/netflix-streaming-analytics/blob/main/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
 <a class="project-card__link" href="https://github.com/Lucifer7355/netflix-streaming-analytics/blob/main/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/airbnb-data-lakehouse" target="_blank" rel="noopener">
+<img src="/assets/img/airbnb-data-lakehouse-cover.svg" alt="Airbnb style medallion data lakehouse architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Airbnb Data Lakehouse <span class="project-card__tag">Kafka</span></h3>
+<p>I wanted one place where Airbnb style events could get cleaned once and then answer several different business questions without redoing the same joins every time. So I built a medallion lakehouse where bookings, payments, searches, reviews, and pricing all flow through the same bronze to silver to gold path.</p>
+<ul class="project-card__highlights">
+<li>Kafka carries the five event domains, and Spark turns them into Iceberg tables on MinIO through a shared REST catalog, so the same tables stay readable from Spark and Trino at once.</li>
+<li>Silver cleans and dedupes by business key, and gold builds five narrow marts for revenue, listing performance, search conversion, review quality, and pricing elasticity instead of one giant fact table.</li>
+<li>I moved from a Hadoop style Iceberg catalog to REST plus MinIO once I found that recent Trino builds do not support the Hadoop catalog type anymore, and Superset just charts whatever Trino returns from those gold tables.</li>
+</ul>
+<p class="project-card__stack">Python · Kafka · Spark · Apache Iceberg · Trino · Superset</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/airbnb-data-lakehouse" target="_blank" rel="noopener">View source ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/airbnb-data-lakehouse/blob/master/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/airbnb-data-lakehouse/blob/master/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
 </div>
 </article>
 
@@ -579,7 +598,7 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 <ul class="project-card__highlights">
 <li>Hybrid retrieval — dense (BGE + Qdrant) and sparse (BM25 + Elasticsearch) — with cross-encoder reranking.</li>
 <li>Retrieval-time role filtering and PII/secret blocking for unauthorized roles.</li>
-<li>Knowledge-graph multi-hop reasoning with NetworkX; JWT auth, audit logs, RAGAS eval, Langfuse/Phoenix tracing.</li>
+<li>Knowledge-graph multi-hop reasoning with NetworkX, plus JWT auth, audit logs, RAGAS eval, and Langfuse/Phoenix tracing.</li>
 </ul>
 <p class="project-card__stack">FastAPI · Streamlit · Qdrant · Elasticsearch · BGE Embeddings · NetworkX · Docker</p>
 <a class="project-card__link" href="https://github.com/Lucifer7355/enterprise-rag-intelligence-platform" target="_blank" rel="noopener">View source ↗</a>
