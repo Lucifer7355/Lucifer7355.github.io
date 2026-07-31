@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-label="Amazon style order data platform architecture diagram">
+  <title>Order write path and streaming analytics architecture</title>
+  <desc>Order service events flow through Debezium CDC into Kafka, then Flink validates, dedupes, enriches, and aggregates them into ClickHouse and Iceberg, with Grafana reading ClickHouse</desc>
+
+  <rect width="960" height="300" fill="#0b1220"/>
+
+  <text x="32" y="40" fill="#2dd4bf" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">ORDER DATA PLATFORM</text>
+
+  <!-- Order Service -->
+  <rect x="32" y="100" width="140" height="100" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="102" y="132" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Order Service</text>
+  <text x="102" y="150" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">Postgres + outbox</text>
+  <text x="102" y="166" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">place, pay, ship</text>
+
+  <!-- Debezium -->
+  <rect x="192" y="115" width="100" height="70" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.3"/>
+  <text x="242" y="145" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="600">Debezium</text>
+  <text x="242" y="161" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="9">reads the WAL</text>
+
+  <!-- Kafka -->
+  <rect x="312" y="100" width="130" height="100" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="377" y="132" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Kafka</text>
+  <text x="377" y="150" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">cdc.order, payment,</text>
+  <text x="377" y="166" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">shipment, inventory</text>
+
+  <!-- Flink -->
+  <rect x="462" y="60" width="200" height="180" rx="8" fill="#111827" stroke="#2dd4bf" stroke-width="1.5"/>
+  <text x="562" y="86" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Flink</text>
+  <rect x="482" y="98" width="160" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="562" y="119" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">validate, dedupe by eventId</text>
+  <rect x="482" y="140" width="160" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="562" y="161" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">enrich, GMV 1 min window</text>
+  <rect x="482" y="182" width="160" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="562" y="203" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">fraud, shipping, inventory</text>
+
+  <!-- ClickHouse -->
+  <rect x="682" y="70" width="120" height="70" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="742" y="98" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">ClickHouse</text>
+  <text x="742" y="116" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="9">serving, ReplacingMergeTree</text>
+
+  <!-- Iceberg on MinIO -->
+  <rect x="682" y="160" width="120" height="70" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.3"/>
+  <text x="742" y="188" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Iceberg</text>
+  <text x="742" y="206" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="9">on MinIO, Spark batch</text>
+
+  <!-- Grafana -->
+  <rect x="822" y="100" width="106" height="100" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="875" y="140" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Grafana</text>
+  <text x="875" y="158" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">GMV, alerts</text>
+
+  <!-- Arrows -->
+  <line x1="172" y1="150" x2="192" y2="150" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="192,150 183,146 183,154" fill="#38bdf8"/>
+
+  <line x1="292" y1="150" x2="312" y2="150" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="312,150 303,146 303,154" fill="#38bdf8"/>
+
+  <line x1="442" y1="150" x2="462" y2="150" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="462,150 453,146 453,154" fill="#2dd4bf"/>
+
+  <line x1="662" y1="120" x2="682" y2="105" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="682,105 672,105 677,96" fill="#38bdf8"/>
+
+  <line x1="662" y1="170" x2="682" y2="190" stroke="#334155" stroke-width="2"/>
+  <polygon points="682,190 675,183 683,178" fill="#334155"/>
+
+  <line x1="802" y1="105" x2="822" y2="120" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="822,120 812,117 815,109" fill="#38bdf8"/>
+
+  <text x="32" y="252" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">The outbox writes in the same transaction as the order, so Debezium never sees a state change without its event.</text>
+  <text x="32" y="272" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Flink dedupes by eventId and keeps GMV, fraud, and shipping alerts in one graph instead of one job each.</text>
+</svg>
