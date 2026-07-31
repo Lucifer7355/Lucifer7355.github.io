@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-label="Airbnb style medallion data lakehouse architecture diagram">
+  <title>Medallion data lakehouse architecture</title>
+  <desc>Airbnb style events flow through Kafka into Spark bronze, silver, and gold jobs on Iceberg tables, then Trino and Superset read the gold marts</desc>
+
+  <rect width="960" height="300" fill="#0b1220"/>
+
+  <text x="32" y="40" fill="#2dd4bf" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">MEDALLION DATA LAKEHOUSE</text>
+
+  <!-- Kafka + landing -->
+  <rect x="32" y="100" width="150" height="100" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="107" y="128" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Kafka</text>
+  <text x="107" y="146" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">bookings, payments,</text>
+  <text x="107" y="162" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">searches, reviews,</text>
+  <text x="107" y="178" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">pricing + landing JSONL</text>
+
+  <!-- Spark medallion -->
+  <rect x="222" y="60" width="220" height="180" rx="8" fill="#111827" stroke="#2dd4bf" stroke-width="1.5"/>
+  <text x="332" y="86" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Spark jobs</text>
+  <rect x="242" y="98" width="180" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="332" y="119" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">bronze_ingest</text>
+  <rect x="242" y="140" width="180" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="332" y="161" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">silver_transform, dedupe</text>
+  <rect x="242" y="182" width="180" height="34" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="332" y="203" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">gold_aggregate, 5 marts</text>
+
+  <!-- Iceberg + MinIO -->
+  <rect x="480" y="100" width="150" height="100" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.3"/>
+  <text x="555" y="128" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Iceberg tables</text>
+  <text x="555" y="146" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">on MinIO</text>
+  <text x="555" y="162" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">shared REST catalog</text>
+  <text x="555" y="178" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">bronze, silver, gold</text>
+
+  <!-- Trino -->
+  <rect x="678" y="70" width="130" height="70" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="743" y="98" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Trino</text>
+  <text x="743" y="116" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">SQL over Iceberg</text>
+
+  <!-- Superset -->
+  <rect x="678" y="160" width="130" height="70" rx="8" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="743" y="188" text-anchor="middle" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">Superset</text>
+  <text x="743" y="206" text-anchor="middle" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="10">dashboards</text>
+
+  <!-- Arrows -->
+  <line x1="182" y1="150" x2="222" y2="150" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="222,150 213,146 213,154" fill="#38bdf8"/>
+
+  <line x1="442" y1="150" x2="480" y2="150" stroke="#2dd4bf" stroke-width="2"/>
+  <polygon points="480,150 471,146 471,154" fill="#2dd4bf"/>
+
+  <line x1="630" y1="130" x2="678" y2="105" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="678,105 668,105 673,96" fill="#38bdf8"/>
+
+  <line x1="743" y1="140" x2="743" y2="160" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="743,160 738,150 748,150" fill="#38bdf8"/>
+
+  <text x="32" y="248" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Spark writes Iceberg and Trino only reads it, so both engines always agree on the same tables.</text>
+  <text x="32" y="270" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="12">Gold has five narrow marts for revenue, listing performance, search conversion, reviews, and pricing.</text>
+</svg>
