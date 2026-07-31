@@ -445,6 +445,25 @@ Right now I'm exploring AI/LLM engineering — Spring AI, LangChain, RAG, MCP �
 </article>
 
 <article class="project-card" data-reveal>
+<a class="project-card__media" href="https://github.com/Lucifer7355/amazon-order-data-platform" target="_blank" rel="noopener">
+<img src="/assets/img/amazon-order-data-platform-cover.svg" alt="Amazon style order data platform architecture cover" loading="lazy" width="1280" height="800" />
+</a>
+<div class="project-card__body">
+<h3>Amazon Order Data Platform <span class="project-card__tag">Kafka</span></h3>
+<p>I wanted an order system where placing an order stays fast even while a dashboard is asking it for GMV right now, failed payments, or which shipments are late. So I split the write path from the analytics path. The order service writes an outbox row in the same transaction as the order, Debezium reads that from Postgres's write ahead log, and everything downstream reacts to that one event.</p>
+<ul class="project-card__highlights">
+<li>Kafka topics are split by aggregate, so a bad batch of payment events never stalls the inventory branch's watermark, and Flink runs validate, dedupe, enrich, and alert as one graph instead of a job per question.</li>
+<li>GMV comes out of a one minute event time window, fraud looks at how many orders a customer placed in the last ten minutes, and shipping delay is an event time timer set to the promised delivery time, all inside the same Flink job.</li>
+<li>ClickHouse serves Grafana off ReplacingMergeTree tables so a replayed event collapses instead of double counting revenue, and the same stream also lands in Iceberg on MinIO for Spark to run daily rollups and reconciliation against Postgres.</li>
+</ul>
+<p class="project-card__stack">Java · Spring Boot · Kafka · Debezium · Flink · ClickHouse · Iceberg</p>
+<a class="project-card__link" href="https://github.com/Lucifer7355/amazon-order-data-platform" target="_blank" rel="noopener">View source ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/amazon-order-data-platform/blob/main/HLD.md" target="_blank" rel="noopener">HLD ↗</a>
+<a class="project-card__link" href="https://github.com/Lucifer7355/amazon-order-data-platform/blob/main/LLD.md" target="_blank" rel="noopener">LLD ↗</a>
+</div>
+</article>
+
+<article class="project-card" data-reveal>
 <a class="project-card__media" href="https://github.com/Lucifer7355/mini-elasticsearch" target="_blank" rel="noopener">
 <img src="/assets/img/mini-elasticsearch-cover.svg" alt="Mini Elasticsearch architecture cover" loading="lazy" width="1280" height="800" />
 </a>
